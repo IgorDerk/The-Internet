@@ -16,7 +16,9 @@ public class HomePage extends BasePage {
     WebElement formAuthentication;
 
     public void getFormAuthentication() {
-        click(formAuthentication);
+//        click(formAuthentication);
+        clickWithJS(formAuthentication, 0, 0);
+
     }
 
 }

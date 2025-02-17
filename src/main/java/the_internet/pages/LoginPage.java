@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import the_internet.core.BasePage;
 
 public class LoginPage extends BasePage {
@@ -18,8 +19,10 @@ public class LoginPage extends BasePage {
     WebElement userPassword;
 
     public LoginPage enterPersonalData(String name, String password) {
-        type(userName, name);
-        type(userPassword, password);
+//        type(userName, name);
+//        type(userPassword, password);
+        typeWithJS(userName, name,0,0);
+        typeWithJS(userPassword, password,0,0);
         return this;
     }
 
@@ -27,8 +30,17 @@ public class LoginPage extends BasePage {
     WebElement loginButton;
 
     public SecurePage clickOnLoginButton() {
-        click(loginButton);
+//        click(loginButton);
+        clickWithJS(loginButton, 0, 0);
         return new SecurePage(driver, wait);
+    }
+
+    @FindBy(id = "flash")
+    WebElement secureFlashLoggedOut;
+
+    public void verifyLoggedOutUser(String expectedText) {
+        System.out.println(secureFlashLoggedOut.getText());
+        Assert.assertTrue(secureFlashLoggedOut.getText().contains(expectedText), "Текст не совпадает!");
     }
 
 

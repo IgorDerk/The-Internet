@@ -18,10 +18,8 @@ public class ApplicationManager {
     public void init() {
         String browser = System.getProperty("browser","chrome");
         if (browser.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
-        } else if (browser.equalsIgnoreCase("chrome_headless")) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("headless");
+//            options.addArguments("headless");
             options.addArguments("window-size=1920x1080");
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("firefox")) {

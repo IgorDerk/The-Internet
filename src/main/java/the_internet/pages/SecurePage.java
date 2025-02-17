@@ -13,9 +13,30 @@ public class SecurePage extends BasePage {
     }
 
     @FindBy(id = "flash")
-    WebElement secureFlash;
+    WebElement secureFlashLogged;
 
-    public void verifyLoggedUser(String expectedText) {
-        Assert.assertTrue(secureFlash.getText().contains(expectedText), "Текст не совпадает!");
+    public SecurePage verifyLoggedUser(String expectedText) {
+
+        Assert.assertTrue(secureFlashLogged.getText().contains(expectedText), "Текст не совпадает!");
+        return new SecurePage(driver, wait);
     }
+
+
+    @FindBy(xpath = "//i[contains(text(),'Logout')]")
+    WebElement logoutButton;
+
+    public LoginPage clickLogOutButton() {
+//        click(loginButton);
+        clickWithJS(logoutButton, 0, 0);
+        return new LoginPage(driver, wait);
+    }
+
+    @FindBy(id = "flash")
+    WebElement secureFlashUsernameIsInvalid;
+
+    public void verifyInvalidUser(String expectedText) {
+        System.out.println(secureFlashUsernameIsInvalid.getText());
+        Assert.assertTrue(secureFlashUsernameIsInvalid.getText().contains(expectedText), "Текст не совпадает!");
+    }
+
 }
