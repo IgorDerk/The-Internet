@@ -1,10 +1,15 @@
 package the_internet.core;
 
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import com.google.common.io.Files;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.Duration;
 
 public class BasePage {
     public WebDriver driver;
@@ -44,6 +49,34 @@ public class BasePage {
         click(element);
     }
 
+    public void scrollTo(int y) {
+        js.executeScript("window.scrollBy(0," + y + ")");
+    }
+
+
+    public String takeScreenshot() {
+        File tmp = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = new File("src/test_screenshots/screen-" + System.currentTimeMillis() + ".png");
+        try {
+            Files.copy(tmp, screenshot);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println("Screenshot saved to: [" + screenshot.getAbsolutePath() + "]");
+        return screenshot.getAbsolutePath();
+    }
+
+    public void shouldHaveText(WebElement element, String text, int timeout) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofMillis(timeout));
+        try {
+            boolean isTextPresent = wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+            Assert.assertTrue(isTextPresent, "Expected text: [" + text + "], actual text in element: [" + element.getText() + "] in element: [" + element + "]");
+        } catch (TimeoutException e) {
+            throw new AssertionError("Text not found in element: [" + element + "], expected text: [" + text + "] was text:[" + element.getText() + "]", e);
+        }
+    }
+
+//Todo вызывает ошибку
 //    public void hideAds() {
 //        js.executeScript("document.getElementById('adplus-anchor').style.display='none';");
 //        js.executeScript("document.querySelector('footer').style.display='none';");

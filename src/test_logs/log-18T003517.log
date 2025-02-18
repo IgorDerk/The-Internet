@@ -1,0 +1,2 @@
+00:35:18.446 [main] INFO  the_internet.core.TestBase -- Test is started: [loginPositiveTest]
+00:35:25.133 [main] INFO  the_internet.core.TestBase -- Test is PASSED: [loginPositiveTest]

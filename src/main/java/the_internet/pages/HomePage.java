@@ -16,9 +16,20 @@ public class HomePage extends BasePage {
     WebElement formAuthentication;
 
     public void getFormAuthentication() {
-//        click(formAuthentication);
-        clickWithJS(formAuthentication, 0, 0);
+
+        scrollTo(100);
+        click(formAuthentication);
+//        clickWithJS(formAuthentication, 0, 0);
 
     }
 
+
+    //* NestedFrames
+    @FindBy(linkText = "Nested Frames")
+    WebElement nestedFrames;
+
+    public void getNestedFrames() {
+        scrollTo(600);
+        click(nestedFrames);
+    }
 }

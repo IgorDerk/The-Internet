@@ -1,0 +1,2 @@
+00:33:40.131 [main] INFO  the_internet.core.TestBase -- Test is started: [loginPositiveTest]
+00:33:48.076 [main] ERROR the_internet.core.TestBase -- Test is FAILED: [loginPositiveTest], Screenshot: [C:\AIT_Programming\AIT_QA\The_Internet\src\test_screenshots\screen-1739835228024.png]
