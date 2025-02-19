@@ -76,6 +76,16 @@ public class BasePage {
         }
     }
 
+    public boolean isElementPresent(WebElement element) {
+        try {
+            return element.isDisplayed();
+        } catch (org.openqa.selenium.NoSuchElementException e) {
+            return false;
+        }
+    }
+
+
+
 //Todo вызывает ошибку
 //    public void hideAds() {
 //        js.executeScript("document.getElementById('adplus-anchor').style.display='none';");

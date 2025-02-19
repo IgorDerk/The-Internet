@@ -1,0 +1,4 @@
+21:44:51.031 [main] INFO  the_internet.core.TestBase -- Test is started: [printCheckBoxPositiveTest]
+21:44:56.713 [main] INFO  the_internet.core.TestBase -- Test is started: [selectCheckboxByTextPositiveTest]
+21:45:00.754 [main] INFO  the_internet.core.TestBase -- Test is started: [selectCheckboxByTextWithActionsPositiveTest]
+21:45:04.960 [main] INFO  the_internet.core.TestBase -- Test is started: [selectCheckboxByTextWithRobotPositiveTest]
