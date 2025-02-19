@@ -11,6 +11,8 @@ public class HomePage extends BasePage {
         super(driver, wait);
     }
 
+    public static final String HOME_PAGE_URL = "https://the-internet.herokuapp.com";
+
     //* FormAuthentication
     @FindBy(linkText = "Form Authentication")
     WebElement formAuthentication;
