@@ -1,2 +1,2 @@
-10:18:52.915 [main] INFO  the_internet.core.TestBase -- Test is started: [nestedFramesPositiveTests]
-10:19:02.608 [main] INFO  the_internet.core.TestBase -- Test is started: [switchToFrameByIndexPositiveTest]
+10:18:52.915 [main] INFO  internet.core.TestBase -- Test is started: [nestedFramesPositiveTests]
+10:19:02.608 [main] INFO  internet.core.TestBase -- Test is started: [switchToFrameByIndexPositiveTest]

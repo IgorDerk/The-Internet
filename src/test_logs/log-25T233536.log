@@ -1,0 +1,6 @@
+23:35:37.082 [main] WARN  o.testng.xml.TestNGContentHandler -- It is strongly recommended to add "<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.1.dtd" >" at the top of the suite file [C:\AIT_Programming\AIT_QA\The_Internet\src\test\resources\login.xml] otherwise TestNG may fail or not work as expected.
+23:35:37.613 [main] INFO  internet.core.TestBase -- Test is started: [loginNegativeTest]
+23:35:43.689 [main] INFO  internet.core.TestBase -- Test is started: [loginNegativeTest]
+23:35:48.307 [main] INFO  internet.core.TestBase -- Test is started: [loginNegativeTest]
+23:35:53.392 [main] INFO  internet.core.TestBase -- Test is started: [loginNegativeTest]
+23:35:59.526 [main] INFO  internet.core.TestBase -- Test is started: [loginPositiveTest]

@@ -1,2 +1,2 @@
-00:30:39.076 [main] INFO  the_internet.core.TestBase -- Test is started: [loginPositiveTest]
-00:30:45.883 [main] ERROR the_internet.core.TestBase -- Test is FAILED: [loginPositiveTest], Screenshot: [C:\AIT_Programming\AIT_QA\The_Internet\src\test_screenshots\screen-1739835045787.png]
+00:30:39.076 [main] INFO  internet.core.TestBase -- Test is started: [loginPositiveTest]
+00:30:45.883 [main] ERROR internet.core.TestBase -- Test is FAILED: [loginPositiveTest], Screenshot: [C:\AIT_Programming\AIT_QA\The_Internet\src\test_screenshots\screen-1739835045787.png]
